@@ -45,6 +45,7 @@
           "installationButton": "Install",
           "shopwareProfileHeadline": "Shopware - Profil",
           "magentoProfileHeadline": "Magento - Profil",
+          "oxidProfileHeadline": "Oxid - Profil",
           "profileManufacturer": "shopware AG"
         },
         "connectionSelect": {

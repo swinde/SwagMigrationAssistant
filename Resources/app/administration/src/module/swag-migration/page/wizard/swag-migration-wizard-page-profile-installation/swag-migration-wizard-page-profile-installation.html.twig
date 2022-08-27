@@ -151,6 +151,81 @@
                                         {% endblock %}
                                     </div>
                                 {% endblock %}
+
+                                {% block swag_migration_wizard_page_profile_installation_oxid_inner_wrapper %}
+                                    <div class="swag-migration-wizard-profile-installation__shopware-plugin swag-migration-wizard-profile-installation__inner_wrapper">
+
+                                        {% block swag_migration_wizard_page_profile_installation_oxid_plugin_icon %}
+                                            <div class="swag-migration-wizard-profile-installation__plugin_icon_column">
+                                                <img class="swag-migration-wizard-profile-installation__plugin-icon"
+                                                     :src="'/swagmigrationassistant/static/img/oxid-profile-icon.svg'|asset">
+                                            </div>
+                                        {% endblock %}
+
+                                        {% block swag_migration_wizard_page_profile_installation_oxid_plugin_information %}
+                                            <div class="swag-migration-wizard-profile-installation__plugin_information_column">
+
+                                                {% block swag_migration_wizard_page_profile_installation_oxid_headline %}
+                                                    <div class="swag-migration-wizard-profile-installation__profile_headline">
+                                                        {{ $tc('swag-migration.wizard.pages.profileInstallation.oxidProfileHeadline') }}
+                                                    </div>
+                                                {% endblock %}
+
+                                                {% block swag_migration_wizard_page_profile_installation_oxid_manufacturer %}
+                                                    <div class="swag-migration-wizard-profile-installation__profile_manufacturer">
+                                                        {{ $tc('swag-migration.wizard.pages.profileInstallation.profileManufacturer') }}
+                                                    </div>
+                                                {% endblock %}
+
+                                                {% block swag_migration_wizard_page_profile_installation_oxid_available_version_headline %}
+                                                    <div class="swag-migration-wizard-profile-installation__available_version_headline">
+                                                        {{ $tc('swag-migration.wizard.pages.profileInstallation.availableVersionHeadline') }}
+                                                    </div>
+                                                {% endblock %}
+
+                                                {% block swag_migration_wizard_page_profile_installation_oxid_available_version_list %}
+                                                    <div class="swag-migration-wizard-profile-installation__available_version_list">
+                                                        <span class="swag-migration-wizard-profile-installation__version_box">1.9</span>
+                                                        <span class="swag-migration-wizard-profile-installation__version_box">2.0</span>
+                                                        <span class="swag-migration-wizard-profile-installation__version_box">2.1</span>
+                                                        <span class="swag-migration-wizard-profile-installation__version_box">2.2</span>
+                                                        <span class="swag-migration-wizard-profile-installation__last_version_box">2.3</span>
+                                                    </div>
+                                                {% endblock %}
+
+                                                {% block swag_migration_wizard_page_profile_installation_oxid_install_button_box %}
+                                                    <div v-if="!isInstalled" class="swag-migration-wizard-profile-installation__footer">
+
+                                                        {% block swag_migration_wizard_page_profile_installation_oxid_install_button_box_content %}
+                                                            <sw-button-process
+                                                                    class="swag-migration-wizard-profile-installation__installation_button"
+                                                                    size="small"
+                                                                    variant="primary"
+                                                                    :isLoading="pluginIsLoading"
+                                                                    :disabled="pluginIsLoading"
+                                                                    :processSuccess="pluginIsSaveSuccessful"
+                                                                    @click="onInstall">
+                                                                {{ $tc('swag-migration.wizard.pages.profileInstallation.installationButton') }}
+                                                            </sw-button-process>
+                                                        {% endblock %}
+                                                    </div>
+                                                {% endblock %}
+
+                                                {% block swag_migration_wizard_page_profile_installation_oxid_installed_box %}
+                                                    <div v-else class="swag-migration-wizard-profile-installation__footer swag-migration-wizard-profile-installation__installed_box">
+
+                                                        {% block swag_migration_wizard_page_profile_installation_oxid_installed_box_content %}
+                                                            <span class="swag-migration-wizard-profile-installation__installed_img">
+                                                                <sw-icon name="small-default-checkmark-circle" size="16px"></sw-icon>
+                                                            </span>
+                                                            <span class="swag-migration-wizard-profile-installation__installed_title">{{ $tc('swag-migration.wizard.pages.profileInstallation.installedHint') }}</span>
+                                                        {% endblock %}
+                                                    </div>
+                                                {% endblock %}
+                                            </div>
+                                        {% endblock %}
+                                    </div>
+                                {% endblock %}
                             </div>
                         {% endblock %}
                     </div>
